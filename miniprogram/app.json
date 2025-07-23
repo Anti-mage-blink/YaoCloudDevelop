@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/myPage/myPage",
+    "pages/uploadPage/uploadPage",
+    "pages/followPage/followPage",
+    "pages/messagePage/messagePage",
+    "pages/mainPage/mainPage",
+    "pages/Top1Page/Top1Page",
+    "pages/Top2Page/Top2Page",
+    "pages/Top3Page/Top3Page",
+    "pages/index/index",
+    "pages/example/index"
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "selectedColor": "#b4282d",
+    "position": "bottom",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/mainPage/mainPage",
+        "text": "首页",
+        "iconPath": "/images/icons/首页图标-默认.png",
+        "selectedIconPath": "/images/icons/首页图标-选中.png"
+      },
+      {
+        "pagePath": "pages/followPage/followPage",
+        "text": "关注",
+        "iconPath": "/images/icons/关注图标-默认.png",
+        "selectedIconPath": "/images/icons/关注图标-选中.png"
+      },
+      {
+        "pagePath": "pages/uploadPage/uploadPage",
+        "text": "发视频",
+        "iconPath": "/images/icons/视频图标-默认.png",
+        "selectedIconPath": "/images/icons/视频图标-选中.png"
+      },
+      {
+        "pagePath": "pages/messagePage/messagePage",
+        "text": "消息",
+        "iconPath": "/images/icons/消息图标-默认.png",
+        "selectedIconPath": "/images/icons/消息图标-选中.png"
+      },
+      {
+        "pagePath": "pages/myPage/myPage",
+        "text": "我的",
+        "iconPath": "/images/icons/我的图标-默认.png",
+        "selectedIconPath": "/images/icons/我的图标-选中.png"
+      }
+    ]
+  }
+}

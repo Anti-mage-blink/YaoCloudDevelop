@@ -1,0 +1,10 @@
+<view class="page-container">
+  <view class="userInfo-container">
+    <image class="avatar-image" src="{{avatar_fileID}}" mode="aspectFit"/>
+    <text class="nickname-text">123</text>
+  </view>
+
+  <view class="videos-uploaded-container">
+    
+  </view>
+</view>

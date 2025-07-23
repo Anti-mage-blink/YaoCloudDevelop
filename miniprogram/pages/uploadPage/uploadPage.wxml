@@ -1,0 +1,41 @@
+<view class="page-container">
+  <view class="top-container">
+    <swiper class="swiper" indicator-dots indicator-active-color="#FFFFFF" circular>
+      <swiper-item class="swiper-item">
+        <image class="swiper-image" 
+          src="cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/上传页面/爆款创作秘籍-上传页面.png" 
+          mode="scaleToFill"/>
+      </swiper-item>
+      <swiper-item class="swiper-item">
+        <image class="swiper-image" 
+          src="cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/上传页面/收益排行榜-上传页面.png" 
+          mode="scaleToFill"/>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class = "mid-container">
+    <button class="upload-button">
+      <image class="upload-image" 
+        src="cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/上传页面/蓝色背景-上传页面.png" 
+        mode="scaleToFill" bindtap="handleTapLeft"/> 
+      <text class="upload-text">上传高清视频</text>
+    </button>
+
+    <button class="upload-button">
+      <image class="upload-image" 
+        src="cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/上传页面/绿色背景-上传页面.png" 
+        mode="scaleToFill" bindtap="handleTapRight"/>
+      <text class="upload-text">上传短视频</text>
+    </button>
+  </view>
+
+  <view class="bottom-container">
+    <button class="record-button" bind:tap="handleTapBottom">
+      <image class="record-image" 
+        src="cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/上传页面/录制图标-上传页面.png" 
+        mode="scaleToFill"/>
+      <text class="record-text">录制上传</text>
+    </button>
+  </view>
+</view>

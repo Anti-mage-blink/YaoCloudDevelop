@@ -1,0 +1,31 @@
+.page-container,
+.userInfo-container {
+  width: 100%;
+}
+
+.page-container {
+  height: 100vh;
+}
+
+.userInfo-container {
+  height: 30vh;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.avatar-image {
+  margin-left: 30rpx;
+
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 75rpx;
+}
+
+.nickname-text {
+  margin-left: 30rpx;
+
+  font-size: larger;
+}
