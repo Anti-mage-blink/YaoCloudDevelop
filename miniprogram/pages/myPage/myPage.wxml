@@ -1,10 +1,13 @@
 <view class="page-container">
   <view class="userInfo-container">
-    <image class="avatar-image" src="{{avatar_fileID}}" mode="aspectFit"/>
+    <image class="avatar-image" src="{{avatar_fileid}}" mode="aspectFit" bindtap="tapUploadAvatar"/>
     <text class="nickname-text">123</text>
   </view>
 
   <view class="videos-uploaded-container">
-    
+    <van-tabs active="{{ true }}">
+      <van-tab title="作品">内容 1</van-tab>
+      <van-tab title="收藏">内容 2</van-tab>
+    </van-tabs>
   </view>
 </view>

@@ -42,7 +42,7 @@ Page({
       count: 1,
       mediaType: ["video"],
       sourceType: ["album"],
-      success: (res) => {
+      success: res => {
         console.log("选择视频成功");
         const tempFile = res.tempFiles[0];
         // app.uploadVideo_chooseMedia(tempFile);
@@ -56,7 +56,14 @@ Page({
               "openid": app.globalData.openid,
               "fileid": res.fileID,
             };
-            app.callContainer("/api/v1/videos", "POST", data);
+            app.callContainer("/api/v1/videos", "POST", data)
+            .then(() => {
+              wx.showToast({
+                title: "上传成功",
+                icon: "success",
+                duration: 1000,
+              })
+            })
           },
           fail: res => {
             console.log("视频上传失败");
@@ -64,7 +71,7 @@ Page({
         })
       },
       fail: err => { 
-        console.log("选择视频失败") 
+        console.error("选择视频失败", err) 
       },
     });
   },

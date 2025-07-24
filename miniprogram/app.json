@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/mainPage/mainPage",
     "pages/myPage/myPage",
     "pages/uploadPage/uploadPage",
     "pages/followPage/followPage",
     "pages/messagePage/messagePage",
-    "pages/mainPage/mainPage",
     "pages/Top1Page/Top1Page",
     "pages/Top2Page/Top2Page",
     "pages/Top3Page/Top3Page",
@@ -15,7 +15,6 @@
     "navigationStyle": "custom"
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2",
   "lazyCodeLoading": "requiredComponents",
   "tabBar": {
     "selectedColor": "#b4282d",

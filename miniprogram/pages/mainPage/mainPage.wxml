@@ -1,2 +1,23 @@
-<!--pages/mainPage/mainPage.wxml-->
-<text>pages/mainPage/mainPage.wxml</text>
+<!-- <scroll-view class="scroll-view" scroll-y style="height: 100vh;"
+  lower-threshold="100rpx" bindscrolltolower="onReachBottom" 
+  refresher-enabled="true" bindrefresherrefresh="onRefresh" refresher-triggered="{{refreshing}}">
+  <block wx:for="{{videoList}}" wx:key="index">
+    <view class="item-container">
+
+      <view class="video-container">
+        <video class="video" src="{{item.video_url}}" controls/>
+      </view>
+      
+      <view class="bottom-bar">
+        <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFit"/>
+        <text class="nickname">{{userInfo.nickname}}</text>
+
+        <button class="share-button" type="primary">
+          <image class="weixin-icon" src="/images/微信图标-分享按钮用.png" mode="aspectFit"/>
+          <text class="share-font">分享</text>
+        </button>
+      </view>
+
+    </view>
+  </block>
+</scroll-view> -->
