@@ -15,17 +15,17 @@
   </view>
 
   <view class = "mid-container">
-    <button class="upload-button">
+    <button class="upload-button" bindtap="handleTapLeft">
       <image class="upload-image" 
         src="cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/上传页面/蓝色背景-上传页面.png" 
-        mode="scaleToFill" bindtap="handleTapLeft"/> 
+        mode="scaleToFill"/>
       <text class="upload-text">上传高清视频</text>
     </button>
 
-    <button class="upload-button">
+    <button class="upload-button" bindtap="handleTapRight">
       <image class="upload-image" 
         src="cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/上传页面/绿色背景-上传页面.png" 
-        mode="scaleToFill" bindtap="handleTapRight"/>
+        mode="scaleToFill"/>
       <text class="upload-text">上传短视频</text>
     </button>
   </view>

@@ -87,8 +87,10 @@ App({
         },
 
         complete: res => {
+
           console.log("容器调用" + method + path 
-                      + "返回状态码: " + res.statusCode.toString());
+                      + "返回状态码: " + res.statusCode.toString()); 
+          // 经测试，toString将number转化为字符串
         },
       })
     })
