@@ -1,23 +1,35 @@
-<!-- <scroll-view class="scroll-view" scroll-y style="height: 100vh;"
+<scroll-view class="scroll-view" scroll-y style="height: 100vh;"
   lower-threshold="100rpx" bindscrolltolower="onReachBottom" 
   refresher-enabled="true" bindrefresherrefresh="onRefresh" refresher-triggered="{{refreshing}}">
-  <block wx:for="{{videoList}}" wx:key="index">
+  <block wx:for="{{unitList}}" wx:key="index">
     <view class="item-container">
 
       <view class="video-container">
-        <video class="video" src="{{item.video_url}}" controls/>
+        <video class="video" src="{{item.video_fileid}}" controls/>
       </view>
       
       <view class="bottom-bar">
-        <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFit"/>
-        <text class="nickname">{{userInfo.nickname}}</text>
+        <image class="avatar" src="{{item.avatar_fileid}}" mode="aspectFit"/>
+        <text class="nickname">{{item.nickname}}</text>
+
+        <view class="like-button" bindtap="tapLike" data-item="{{item}}">
+          <image class="like-icon" 
+          src="{{item.is_liked ? 'cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/通用图像文件/点赞图标-已点赞.png' : 'cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/通用图像文件/点赞图标-未点赞.png' }}" 
+          mode="aspectFit"/>
+        </view>
+        
+        <view class="collect-button" bindtap="tapCollect" data-item="{{item}}">
+          <image class="collect-icon" 
+          src="{{item.is_collected ? 'cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/通用图像文件/收藏图标-已收藏.png' : 'cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/通用图像文件/收藏图标-未收藏.png' }}" 
+          mode="aspectFit"/>
+        </view>
 
         <button class="share-button" type="primary">
-          <image class="weixin-icon" src="/images/微信图标-分享按钮用.png" mode="aspectFit"/>
+          <image class="weixin-icon" src="cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/通用图像文件/微信图标-分享按钮用.png" mode="aspectFit"/>
           <text class="share-font">分享</text>
         </button>
       </view>
 
     </view>
   </block>
-</scroll-view> -->
+</scroll-view>

@@ -1,4 +1,4 @@
-/* .scroll-view {
+.scroll-view {
   width: 100%;
 }
 
@@ -40,18 +40,46 @@
   width: 70rpx;
   border-radius: 50%;
   border: 2rpx solid #fff;
+  flex-shrink: 0;
 }
 
 .nickname {
-  position: relative;
-  left: 15rpx;
+  margin-left: 20rpx;
+  flex-grow: 1;
 
   font-family: sans-serif;
 }
 
+.like-button {
+
+  height: 70%;
+  width: 100rpx!important;
+}
+
+.like-icon {
+  height: 100%;
+  width: 100%;
+}
+
+.collect-button {
+  /* position: relative;
+  left: 30rpx; */
+
+  height: 70%;
+  width: 100rpx!important;
+
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+}
+
+.collect-icon {
+  height: 100%;
+  width: 100%;
+}
+
 .share-button {
-  position: relative;
-  left: 130rpx;
+  margin-right: 30rpx;
 
   height: 70%;
   width: 200rpx !important;
@@ -79,4 +107,4 @@
   left: 40rpx;
 
   font-family: sans-serif;
-} */
+}
