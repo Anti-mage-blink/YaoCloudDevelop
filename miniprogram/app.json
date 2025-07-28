@@ -1,15 +1,13 @@
 {
   "pages": [
+    "pages/myPage/myPage",
     "pages/mainPage/mainPage",
     "pages/uploadPage/uploadPage",
-    "pages/myPage/myPage",
     "pages/followPage/followPage",
     "pages/messagePage/messagePage",
     "pages/Top1Page/Top1Page",
     "pages/Top2Page/Top2Page",
-    "pages/Top3Page/Top3Page",
-    "pages/index/index",
-    "pages/example/index"
+    "pages/Top3Page/Top3Page"
   ],
   "window": {
     "navigationStyle": "custom"

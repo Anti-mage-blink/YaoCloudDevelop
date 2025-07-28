@@ -6,8 +6,33 @@
 
   <view class="videos-uploaded-container">
     <van-tabs active="{{ true }}">
-      <van-tab title="作品">内容 1</van-tab>
-      <van-tab title="收藏">内容 2</van-tab>
+      <van-tab title="作品">
+        <scroll-view class="scroll-view" scroll-y
+          lower-threshold="100rpx" bindscrolltolower="onReachBottom">
+          <block wx:for="{{unitList}}" wx:key="index">
+            <view class="item-container">
+
+              <view class="video-container">
+                <video class="video" src="{{item.video_fileid}}" controls/>
+              </view>
+              
+              <view class="bottom-bar">
+                <image class="avatar" src="{{item.avatar_fileid}}" mode="aspectFit"/>
+                <text class="nickname">{{item.nickname}}</text>
+
+                <button class="share-button" type="primary" open-type="share" bindtap="onShareAppMessage" >
+                  <image class="weixin-icon" src="cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/通用图像文件/微信图标-分享按钮用.png" mode="aspectFit"/>
+                  <text class="share-font">分享</text>
+                </button>
+              </view>
+
+            </view>
+          </block>
+        </scroll-view>
+      </van-tab>
+      <van-tab title="收藏">
+
+      </van-tab>
     </van-tabs>
   </view>
 </view>

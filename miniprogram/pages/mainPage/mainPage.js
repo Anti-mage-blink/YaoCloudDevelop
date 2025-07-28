@@ -74,21 +74,21 @@ Page({
     // JavaScript会合并同名键，wx.cloud.callContainer允许"键-数组"
     const query_params = {
       fileid_list: this.data.videoList,
-      need_count: 3,
+      need_count: 4,
       openid: app.globalData.openid,
     };
-    console.log("videoList传参:");
-    console.log(this.data.videoList);
+    // console.log("videoList传参:");
+    // console.log(this.data.videoList);
     app.callContainer("/api/v1/videos/random_n_with_userInfo", "GET", query_params)
     .then(res => {
       this.setData({
         videoList: this.data.videoList.concat(res.fileid_list),
         unitList: this.data.unitList.concat(res.unit_list)
       });
-      console.log("获取视频后videoList:");
-      console.log(this.data.videoList);
-      console.log("获取视频后unitList:");
-      console.log(this.data.unitList);
+      // console.log("获取视频后videoList:");
+      // console.log(this.data.videoList);
+      // console.log("获取视频后unitList:");
+      // console.log(this.data.unitList);
     })
     .finally(() => {
       this.setData({ loadingMtx: false });
@@ -110,7 +110,10 @@ Page({
     this.getUnitList(true);
   },
 
-  // onShareAppMessage() {
-    
-  // }
+  onShareAppMessage() {
+    return {
+      title: "乐龄智汇坊",
+      path: "/pages/mainPage/mainPage",
+    }
+  }
 })

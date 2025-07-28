@@ -56,11 +56,11 @@ App({
                   if (data.avatar_fileid != "") {
                     this.globalData.avatar_fileid = data.avatar_fileid;
                   }
+                  resolve(openid);
                   // console.log(this.globalData.nickname);
                   // console.log(this.globalData.avatar_fileid);
                 })
             })
-          resolve(openid);
         },
         fail: err => {
           console.log("openid获取失败");

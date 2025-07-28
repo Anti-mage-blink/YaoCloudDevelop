@@ -4,6 +4,27 @@ Page({
   data: {
     nickname: "",
     avatar_fileid: "",
+    unitList: [],
+  },
+
+  onLoad() {
+    app.globalData.openidPromise.then(openid => {
+      console.log("[myPage:onLoad]openid:" + openid)
+      this.getVideoList();
+    })
+  },
+
+  getVideoList() {
+    const query_params = {
+      openid: app.globalData.openid,
+    }
+    app.callContainer("/api/v1/videos", "GET", query_params)
+    .then(res => {
+      console.log(res);
+      this.setData({
+        unitList: res.unit_list,
+      })
+    })
   },
 
   onShow() {
@@ -76,5 +97,12 @@ Page({
       }
     })
 
-  }
+  },
+
+  onShareAppMessage() {
+    return {
+      title: "乐龄智汇坊",
+      path: "/pages/mainPage/mainPage",
+    }
+  },
 })
