@@ -1,0 +1,3 @@
+<view>
+  <van-empty description="暂无收益"/>
+</view>

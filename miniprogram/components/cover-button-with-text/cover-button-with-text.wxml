@@ -1,0 +1,5 @@
+<cover-view class="custom-style custom-button-container" catch:tap="touchButton">
+  <!-- 若为切换式，则image-src在引用处实现:{{bool变量？一个值:另一个值}} -->
+  <cover-image class="icon" src="{{iconPath}}"/>
+  <cover-view class="custom-style-text text">{{text}}</cover-view>
+</cover-view>

@@ -1,0 +1,61 @@
+<view class="page-container">
+  <form bindsubmit="onFormSubmit">
+    <!-- 头像 -->
+    <view class="form-item avatar-section">
+      <button class="avatar-button" catch:tap="tapUploadAvatar">
+        <image class="avatar-image" src="{{avatar_fileid}}"></image>
+      </button>
+    </view>
+
+    <!-- 昵称 -->
+    <view class="form-item">
+      <text class="label">昵称</text>
+      <input class="input-field" name="nickname" type="nickname" 
+      placeholder="请输入昵称" value="{{nickname}}" maxlength="20"/>
+    </view>
+
+    <!-- 签名 -->
+    <view class="form-item">
+      <text class="label">签名</text>
+      <input class="input-field" name="signature" 
+      placeholder="介绍一下自己" value="{{signature}}" maxlength="50"/>
+    </view>
+
+    <!-- 性别 -->
+    <view class="form-item">
+      <text class="label">性别</text>
+      <radio-group class="radio-group-gender" name="gender">
+        <label class="radio-label" wx:for="{{genderOptions}}" wx:key="value">
+          <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+        </label>
+      </radio-group>
+    </view>
+
+    <!-- 年龄 -->
+    <view class="section-title">年龄</view>
+    <view class="tag-section">
+      <radio-group name="ageRange">
+        <label wx:for="{{ageOptions}}" wx:key="value" 
+        class="tag-label {{ item.checked ? 'tag-checked' : '' }}">
+          <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+        </label>
+      </radio-group>
+    </view>
+
+    <!-- 喜欢的内容 -->
+    <view class="section-title">喜欢的内容(多选)</view>
+    <view class="tag-section">
+      <checkbox-group name="interest_category_list">
+        <label wx:for="{{interestOptions}}" wx:key="value" 
+        class="tag-label {{ item.checked ? 'tag-checked' : '' }}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+        </label>
+      </checkbox-group>
+    </view>
+
+    <!-- 保存按钮 -->
+    <view class="save-button-wrapper">
+      <button class="save-button" form-type="submit">保存</button>
+    </view>
+  </form>
+</view>

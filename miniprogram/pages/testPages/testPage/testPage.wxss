@@ -1,0 +1,88 @@
+/* 整体页面和滚动区域 */
+.page-container {
+  padding: 0 15px;
+}
+
+/* 每个推荐用户的外层容器 */
+.scroll-item-container {
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0; /* 分隔线 */
+}
+
+/* 创作者信息容器（头像、昵称、关注按钮） */
+.creator-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: space-between; /* 两端对齐，将按钮推到最右边 */
+  margin-bottom: 15px;
+}
+
+/* 头像 */
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* 圆形头像 */
+  margin-right: 10px;
+  flex-shrink: 0; /* 防止头像被压缩 */
+}
+
+/* 创作者文字信息容器 */
+.creator-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1; /* 占据剩余空间 */
+}
+
+/* 昵称 */
+.nickname {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* 其他信息（视频数、粉丝数） */
+.other-info {
+  font-size: 12px;
+  color: #999;
+}
+
+/* 关注按钮 (需要在WXML中添加) */
+.follow-button {
+  background-color: #07c160; /* 绿色背景 */
+  color: white;
+  font-size: 14px;
+  padding: 6px 16px;
+  border-radius: 20px; /* 圆角 */
+  border: none;
+  flex-shrink: 0; /* 防止按钮被压缩 */
+}
+
+/* 横向滚动的视频列表容器 */
+.video-list-container {
+  /* scroll-view组件本身需要设置white-space: nowrap才能让内部元素横向排列 */
+  white-space: nowrap;
+}
+
+/* 单个视频的容器 */
+.video-container {
+  display: inline-block; /* 使其可以横向排列 */
+  width: 120px; /* 视频宽度 */
+  margin-right: 8px; /* 视频间距 */
+  vertical-align: top;
+}
+
+/* 视频单元 */
+.video-unit {
+  width: 100%;
+  height: 100px; /* 视频高度，可根据需要调整 */
+  border-radius: 8px; /* 圆角 */
+  object-fit: cover; /* 保持视频比例，充满容器 */
+}
+
+/* 最后一个视频不需要右边距 */
+.video-container:last-child {
+  margin-right: 0;
+}

@@ -1,19 +1,17 @@
-.page-container,
+.page-container {
+  width: 100%;
+  height: 100vh;
+  display: flex; /* 设为 flex 容器 */
+  flex-direction: column; /* 垂直排列 */
+}
+
 .userInfo-container {
   width: 100%;
-}
-
-.page-container {
-  height: 100vh;
-}
-
-.userInfo-container {
   height: 30vh;
-
   display: flex;
   flex-direction: row;
   align-items: center;
-
+  flex-shrink: 0; /* 防止被压缩 */
 }
 
 .avatar-image {
@@ -21,19 +19,70 @@
 
   height: 150rpx;
   width: 150rpx;
-  border-radius: 75rpx;
+  border-radius: 50%;
 }
 
 .nickname-text {
-  margin-left: 30rpx;
+  margin-left: 20rpx;
+  width: 100rpx;
+  flex-grow: 1;
 
   font-size: larger;
 }
 
+.settings-button {
+  margin-right: 20rpx;
 
+}
+
+.top-share-button {
+  margin-right: 25rpx;
+  --icon-border-radius: 10rpx;
+}
+
+.inner-share-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* 新增：让 tabs 容器撑满剩余空间 */
+.videos-uploaded-container {
+  flex-grow: 1; /* 占据所有剩余垂直空间 */
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* 关键：允许容器在空间不足时收缩 */
+}
+
+/* 新增：让 van-tabs 自身也撑满 */
+.videos-uploaded-container .van-tabs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 新增：让 van-tabs 的内容区域撑满 */
+.videos-uploaded-container .van-tabs .van-tabs__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 新增：让 van-tab 撑满 */
+.videos-uploaded-container .van-tabs .van-tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 
 .scroll-view {
-  height: 60vh;
+  /* height: 60vh; */ /* 不再需要固定的 vh */
+  height: 100%; /* 撑满父容器(van-tab)的高度 */
   width: 100%;
 }
 

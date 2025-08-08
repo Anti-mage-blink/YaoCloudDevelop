@@ -1,2 +1,40 @@
-<!--pages/followPage/followPage.wxml-->
-<text>pages/followPage/followPage.wxml</text>
+<view>
+<!-- 3=scroll-view 4=scroll-item-container 5=creator-container -->
+  <van-tabs active="{{activeTab}}" swipeable bind:change="changeTab">
+    <van-tab wx:for="{{categoryList}}" 
+    wx:for-item="category" wx:for-index="categoryIndex"
+    title="{{category.title}}" wx:key="title">
+      <scroll-view scroll-y scroll-with-animation
+      lower-threshold="100rpx" bindscrolltolower="onReachBottom"
+      refresher-enabled="true" bindrefresherrefresh="onRefresh" 
+      refresher-triggered="{{refreshing}}">
+        <view wx:for="{{category.creatorUnitList}}" 
+        wx:for-item="creator" wx:for-index="creatorIndex"
+        class="scroll-item-container" wx:key="user_id">
+          <view class="creator-container">
+            <image class="avatar" src="{{creator.avatar_fileid}}"/>
+            <view class="creator-text-container">
+              <text class="nickname">{{creator.nickname}}</text>
+              <text class="other-info">
+                视频数{{creator.video_count}}·粉丝数{{creator.follower_count}}
+              </text>
+            </view>
+
+            <follow-button custom-style="followPage-follow-button"
+            data-category-index="{{categoryIndex}}"
+            data-creator-index="{{creatorIndex}}"
+            followed_openid="{{creator.openid}}" 
+            isFollowed="{{creator.is_followed}}" 
+            bind:toggle="onToggle"/>
+          </view>
+          <scroll-view class="video-list-container" scroll-x>
+            <view wx:for="{{creator.video_fileid_list}}" 
+            wx:for-item="video_fileid" class="video-container" wx:key="*this">
+              <video src="{{video_fileid}}" class="video-unit"/>
+            </view>
+          </scroll-view>
+        </view>
+      </scroll-view>
+    </van-tab>
+  </van-tabs>
+</view>

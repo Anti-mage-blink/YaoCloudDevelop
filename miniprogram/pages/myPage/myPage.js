@@ -4,14 +4,52 @@ Page({
   data: {
     nickname: "",
     avatar_fileid: "",
-    unitList: [],
+    unitList_works: [],
+    unitList_collects: [],
+
+    showSlideMenu: false,
   },
 
   onLoad() {
     app.globalData.openidPromise.then(openid => {
       console.log("[myPage:onLoad]openid:" + openid)
       this.getVideoList();
+      this.getCollectVideoList();
     })
+  },
+
+  onShow() {
+    app.globalData.openidPromise.then(openid => {
+      this.getVideoList();
+      this.getCollectVideoList();
+      this.setData({
+        nickname: app.globalData.nickname,
+        avatar_fileid: app.globalData.avatar_fileid,
+      })
+    })
+  },
+
+  tapSettingsButton() {
+    this.setData({ showSlideMenu: true });
+  },
+  hideSlideMenu() {
+    this.setData({ showSlideMenu: false });
+  },
+
+  tapEditProfile() {
+    wx.navigateTo({ url: '/pages/myPage/profileEdit/profileEdit' })
+  },
+
+  tapMyProfit() {
+    wx.navigateTo({ url: '/pages/myPage/profitPage/profitPage' })
+  },
+
+  tapHelpAndFeedback() {
+    wx.navigateTo({ url: '/pages/myPage/helpPage/helpPage' })
+  },
+
+  tapTopShareButton() {
+    
   },
 
   getVideoList() {
@@ -22,15 +60,26 @@ Page({
     .then(res => {
       console.log(res);
       this.setData({
-        unitList: res.unit_list,
+        unitList_works: res.unit_list,
       })
     })
   },
 
-  onShow() {
-    this.setData({
-      nickname: app.globalData.nickname,
-      avatar_fileid: app.globalData.avatar_fileid,
+  switchToCollect() {
+    console.log("事件触发：切换到收藏");
+    this.getCollectVideoList();
+  },
+
+  getCollectVideoList() {
+    const query_params = {
+      openid: app.globalData.openid,
+    }
+    app.callContainer("/api/v1/collects", "GET", query_params)
+   .then(res => {
+      console.log(res);
+      this.setData({
+        unitList_collects: res.unit_list,
+      })
     })
   },
 

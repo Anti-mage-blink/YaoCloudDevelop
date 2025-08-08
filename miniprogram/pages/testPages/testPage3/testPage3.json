@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "general-button": "/components/general-button/general-button",
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-popup": "@vant/weapp/popup/index"
+  }
+}

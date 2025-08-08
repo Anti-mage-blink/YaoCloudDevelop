@@ -1,0 +1,16 @@
+.custom-button-container {
+  position: relative; /* 新增：为绝对定位的子元素提供定位上下文 */
+  width: var(--icon-width, 80rpx);
+  height: var(--icon-height, 80rpx);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.icon {
+  height: var(--icon-height, 80rpx);
+  width: var(--icon-width, 80rpx);
+  border-radius: var(--icon-border-radius, 50%);
+}

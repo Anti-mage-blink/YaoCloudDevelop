@@ -1,0 +1,144 @@
+.page-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-container {
+  height: auto;
+  flex: 1;
+  transition: flex 0.3s ease-out;
+
+  background: black;
+}
+
+.video-container.shrink {
+  flex: 0.4;
+  flex-shrink: 1;
+}
+
+.comment-popup-container {
+  height: 60vh;
+  flex: 0.6; /* 占据容器的60% */
+  flex-shrink: 0;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-bar {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title-bar > .title-text {
+  height: 100%; 
+  width: 100%; 
+  line-height: 100%;
+  text-align: center;
+}
+
+.comment-scroll {
+  height: calc(60vh-50px);
+  flex: 1;
+}
+
+.bottom-bar {
+  height: 50px;
+  width: 100%;
+  /* border-top: 2px solid lightgray; */
+  background-color: lightgray;
+
+  display: flex!important;
+  flex-direction: row!important;
+  justify-content: flex-start!important;
+  align-items: center!important;
+  flex-wrap: nowrap;
+}
+
+.comment-input {
+  
+  height: 36px;
+  width: 300rpx;
+  border-radius: 9px;
+
+  padding: 0 0 0 9px;
+  margin: 0 0 0 20rpx;
+
+  background-color: white;
+  flex-shrink: 0;
+}
+
+.input-placeholder {
+  color: lightgray;
+}
+
+.send-button {
+  height: 30px;
+  width: 110rpx;
+  padding: 0 0 0 0!important;
+  margin: 0 0 0 0!important;
+  background-color: #fe2c55 !important;
+  /* border-color: #fe2c55 !important; */
+  border-radius: 15px !important;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.send-button::after {
+  height: 0!important;
+  width: 0!important;
+  border: none!important;
+  position: relative!important;
+  content: "";
+  display: none!important;
+}
+
+.send-button > .send-text {
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+  line-height: 100%;
+}
+
+
+
+
+
+
+
+
+.cover-button-group {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    height: 40vh;
+    width: 90rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25rpx 10vh 0;
+}
+
+.cover-button-text {
+    color: white;
+}
+
+.share-button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  line-height: normal;
+}
+

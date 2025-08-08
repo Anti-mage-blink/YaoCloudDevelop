@@ -1,6 +1,11 @@
 {
   "usingComponents": {
     "van-tab": "@vant/weapp/tab/index",
-    "van-tabs": "@vant/weapp/tabs/index"
+    "van-tabs": "@vant/weapp/tabs/index",
+    "button-with-text": "/components/button-with-text/button-with-text",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-switch": "@vant/weapp/switch/index"
   }
 }

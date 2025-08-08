@@ -1,15 +1,31 @@
 {
   "pages": [
-    "pages/myPage/myPage",
+    "pages/testPages/testPage4/testPage4",
+    "pages/testPages/testPage2/testPage2",
+    "pages/Top3Page/Top3Page",
     "pages/mainPage/mainPage",
-    "pages/uploadPage/uploadPage",
+    
+    "pages/concreteVideoPage/concreteVideoPage",
+    "pages/myPage/myPage",
+    "pages/testPages/testPage3/testPage3",
     "pages/followPage/followPage",
+    "pages/myPage/profileEdit/profileEdit",
+    "pages/testPages/testPage/testPage",
     "pages/messagePage/messagePage",
+    "pages/uploadPage/uploadPage",
     "pages/Top1Page/Top1Page",
     "pages/Top2Page/Top2Page",
-    "pages/Top3Page/Top3Page"
+    "pages/messagePage/likePage/likePage",
+    "pages/messagePage/commentPage/commentPage",
+    "pages/messagePage/fansPage/fansPage",
+    "pages/messagePage/sysmessagePage/sysmessagePage",
+    "pages/myPage/profitPage/profitPage",
+    "pages/myPage/helpPage/helpPage"
   ],
   "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
   "sitemapLocation": "sitemap.json",

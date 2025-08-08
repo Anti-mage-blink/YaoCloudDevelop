@@ -1,0 +1,6 @@
+<button-with-text custom-style="" 
+    src="{{isLiked ? '/images/icons/点赞图标-已点赞.png' : '/images/icons/点赞图标-未点赞.png'}}"
+    text="{{likeCount}}" 
+    catch:touch="tapLikeButton">
+      
+</button-with-text>

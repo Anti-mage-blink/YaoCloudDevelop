@@ -1,2 +1,27 @@
-<!--pages/messagePage/messagePage.wxml-->
-<text>pages/messagePage/messagePage.wxml</text>
+<view class="page-container">
+  <view class="top-container">
+    <view class="social-container" bind:tap="tapLike">
+      <image class="social-icon" src="/images/icons/点赞图标-消息页面.png" mode="aspectFit"/>
+      <text class="social-text">赞</text>
+    </view>
+
+    <view class="social-container" bind:tap="tapFans">
+      <image class="social-icon" src="/images/icons/粉丝图标-消息页面.png" mode="aspectFit"/>
+      <text class="social-text">粉丝</text>
+    </view>
+
+    <view class="social-container" bind:tap="tapComment">
+      <image class="social-icon" src="/images/icons/评论图标.png" mode="aspectFit"/>
+      <text class="social-text">评论</text>
+    </view>
+
+    <view class="social-container" bind:tap="tapSysmessage">
+      <image class="social-icon" src="/images/icons/系统消息图标-消息页面.png" mode="aspectFit"/>
+      <text class="social-text">系统消息</text>
+    </view>
+  </view>
+
+  <view class="bottom-container">
+    <van-empty description="暂无消息"/>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<view class="page-container">
+  <view class="video-container">
+    <video class="video" src="{{unit.video_fileid}}" controls/>
+    <cover-view class="follow-container" bindtap="tapFollow" data-item="{{unit}}">
+      <cover-image class="follow-avatar" src="{{unit.avatar_fileid}}" mode="aspectFit"/>
+      <!-- <cover-view class="follow-text">{{unit.is_followed ? '已关注' : '+ 关注'}}</cover-view> -->
+      <cover-view class="follow-text">＋关注</cover-view>
+    </cover-view>
+    <image class="test_avatar" src="{{unit.avatar_fileid}}" mode="aspectFit"/>
+  </view>
+  <view class="bottom-bar">
+    <image class="avatar" src="{{unit.avatar_fileid}}" mode="aspectFit"/>
+    <text class="nickname">{{unit.nickname}}</text>
+
+    <view class="like-button" bindtap="tapLike" data-item="{{unit}}">
+        <image class="like-icon" 
+        src="{{unit.is_liked ? '/images/icons/点赞图标-已点赞.png' : '/images/icons/点赞图标-未点赞.png' }}" 
+        mode="aspectFit"/>
+    </view>
+    
+    <view class="collect-button" bindtap="tapCollect" data-item="{{unit}}">
+        <image class="collect-icon" 
+        src="{{unit.is_collected ? '/images/icons/收藏图标-已收藏.png' : '/images/icons/收藏图标-未收藏.png' }}" 
+        mode="aspectFit"/>
+    </view>
+
+    <button class="share-button" type="primary" bindtap="onShareAppMessage">
+      <image class="weixin-icon" src="/images/icons/微信图标-分享按钮用.png" mode="aspectFit"/>
+      <text class="share-font">分享</text>
+    </button>
+  </view>
+</view>

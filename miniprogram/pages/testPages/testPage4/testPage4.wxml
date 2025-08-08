@@ -1,0 +1,72 @@
+<view class="page-container">
+  <!-- 视频区域 -->
+  <view class="video-container {{ showVideoCommentPopup ? 'shrink' : '' }}">
+    <video class="video"
+      style="height: 100%; width: 100%;"
+      id="videoPlayer" 
+      src="{{unit.video.video_fileid}}" 
+      controls 
+      object-fit="fill"
+    >
+
+    </video>
+  </view>
+
+  <!-- overlay-style="background-color: transparent;" -->
+  <van-popup wx:if="{{showVideoCommentPopup}}" 
+  show="{{showVideoCommentPopup}}" 
+  position="bottom"
+  custom-class="comment-popup-container"
+  duration="{{300}}"
+  round 
+  closeable
+  close-on-click-overlay
+  bind:close="closeVideoCommentPopup"
+  >
+    <view class="title-bar" style="height: 54px;">
+      <text class="title-text">
+        共{{unit.video.comment_count}}条评论
+      </text>
+    </view>
+    <scroll-view class="comment-scroll" scroll-y>
+      <view class="first-level-container"
+      wx:for="{{videoFirstLevelCommentList}}">
+        
+      </view>
+    </scroll-view>
+    
+    <form class="bottom-bar" bindsubmit="publishComment">
+      <input class="comment-input" name="commentContent"
+      placeholder="万水千山总是情，你说两句行不行~"
+      placeholder-style="input-placeholder"/>
+      <button class="send-button" form-type="submit" catch:tap="publishComment">
+        <text class="send-text">发布</text>
+      </button>
+    </form>
+
+  </van-popup>
+</view>
+
+<view class="cover-button-group">
+  <cover-button-with-text 
+  custom-style-text="cover-button-text"
+  iconPath="{{unit.current_user.is_liked ? '/images/icons/点赞图标-配套白色-已点赞.png':'/images/icons/点赞图标-白色-未点赞.png'}}"
+  text="{{unit.video.like_count}}" 
+  catch:touch="tapLike"/>
+  <cover-button-with-text 
+  custom-style-text="cover-button-text" 
+  iconPath="/images/icons/评论图标-面性白色.png"
+  text="{{unit.video.comment_count}}"
+  catch:touch="tapComment"/>
+  <cover-button-with-text 
+  custom-style-text="cover-button-text"
+  iconPath="{{unit.current_user.is_collected ? '/images/icons/收藏图标-配套白色-已收藏.png':'/images/icons/收藏图标-白色-未收藏.png'}}"
+  text="{{unit.video.collect_count}}" 
+  catch:touch="tapCollect"/>
+  <button class="share-button" open-type="share">
+    <cover-button-with-text 
+    custom-style-text="cover-button-text"
+    iconPath="/images/icons/分享图标-面性白色.png"
+    text="{{unit.video.share_count}}" />
+  </button>
+</view>

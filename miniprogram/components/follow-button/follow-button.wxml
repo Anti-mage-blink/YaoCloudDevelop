@@ -1,0 +1,6 @@
+<view class="custom-style {{isFollowed ? 'followed' : 'tofollow'}}_custom-follow-button"
+bindtap="tapFollowButton">
+  <text class="{{isFollowed ? 'followed' : 'tofollow'}}_text">
+    {{isFollowed ? '✓ 已关注' : '＋关注'}}
+  </text>
+</view>

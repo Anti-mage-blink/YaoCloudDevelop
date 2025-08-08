@@ -1,0 +1,12 @@
+<button-with-text src="/images/icons/设置图标-我的页面.png" text="设置"
+bind:tap="tapSettingsButton"/>
+<follow-button isFollowed="{{creator.isFollowed}}" bind:toggle="onToggle"/>
+<like-button-with-text 
+isLiked="{{isLiked}}"
+videoFileID="cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/usersFiles/o35VCvvYpoRPxO_Q1GZufwJTWSQU/2025-07-26T10_40_42_671Z-video"
+catch:toggle="toggleLikeButton"/>
+<collect-button-with-text
+isCollected="{{isCollected}}"
+videoFileID="cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/usersFiles/o35VCvvYpoRPxO_Q1GZufwJTWSQU/2025-07-26T10_40_42_671Z-video"
+catch:toggle="toggleCollectButton"/>
+<cover-button-with-text/>

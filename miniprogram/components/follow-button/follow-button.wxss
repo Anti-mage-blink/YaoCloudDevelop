@@ -1,0 +1,42 @@
+.tofollow_custom-follow-button,
+.followed_custom-follow-button {
+  height: 100rpx;
+  width: 200rpx;
+
+  border-radius: 50rpx;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.tofollow_custom-follow-button {
+  background-color: #08B605;
+
+
+}
+
+.followed_custom-follow-button {
+  background-color: lightgray;
+  
+}
+
+.tofollow_text,
+.followed_text {
+  line-height: 0;
+  text-align: center;
+
+  font-size: 35rpx;
+
+}
+
+.tofollow_text {
+  
+  color: white;
+  font-family: sans-serif;
+}
+
+.followed_text {
+  color: gray;
+}

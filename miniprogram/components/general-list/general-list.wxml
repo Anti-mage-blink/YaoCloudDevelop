@@ -1,0 +1,6 @@
+<scroll-view class="list-container">
+    <view class="item-container" wx:for="{{list}}">
+      <text>{{item}}</text>
+    </view>
+</scroll-view>
+

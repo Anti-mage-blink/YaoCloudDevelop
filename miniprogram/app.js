@@ -4,6 +4,8 @@ App({
     openid: "", 
     cloudrun_env: "prod-0gl5viji734183b5",
 
+    No20_video_fileid: "cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/usersFiles/o35VCvvYpoRPxO_Q1GZufwJTWSQU/2025-07-26T10_40_42_671Z-video",
+
     // 用户信息，先采用默认值，后续查询传入
     nickname: "默认昵称",
     avatar_fileid: "cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/通用图像文件/默认头像.png",
@@ -86,15 +88,61 @@ App({
         success: res => {
           if (res.statusCode >= 200 && res.statusCode < 300) {
             resolve(res.data);
+          } else {
+            reject(res);
           }
         },
 
+        fail: err => {
+          reject(err);
+        },
+
         complete: res => {
-          console.log("容器调用" + method + path 
+          if(res.statusCode) {
+            console.log("容器调用" + method + path 
                       + "返回状态码: " + res.statusCode.toString()); 
-          // 经测试，toString将number转化为字符串
+            // 经测试，toString将number转化为字符串
+          }
         },
       })
     })
   },
+
+  deleteVideo(video_fileid, cover_fileid) {
+    // 传入视频fileid
+    wx.showLoading({title: "删除中"})
+
+    const openid = app.globalData.openid;
+    // const openid = "test-creator";
+    // 这里好像能一次直接删除两个
+    // 删除视频封面和视频文件
+    // 异步上传视频封面
+    wx.cloud.deleteFile({ 
+      fileList: [video_fileid, cover_fileid] 
+    })
+    .then(res => {
+      const data = {
+        fileid: video_fileid,
+        cover_fileid: cover_fileid,
+      }
+      return app.callContainer("/api/v1/videos", "DELETE", data)
+    })
+    .then(res => {
+      wx.hideLoading()
+      wx.showToast({
+        title: "上传成功",
+        icon: "success",
+        duration: 1000,
+      });
+    })
+    .catch(err => {
+      console.err(err)
+      wx.hideLoading();
+      wx.showToast({
+        title: "删除失败",
+        icon: "error",
+        duration: 1000
+      });
+    })
+  }
 });

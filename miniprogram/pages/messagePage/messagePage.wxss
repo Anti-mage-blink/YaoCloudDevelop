@@ -1,1 +1,45 @@
-/* pages/messagePage/messagePage.wxss */
+.page-container {
+  height: 100vh;
+  width: 100%;
+}
+
+.top-container {
+  height: 30%;
+  width: 100%;
+
+  border-bottom: 2px solid rgb(238, 235, 235);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.social-container {
+  padding: 10rpx;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon {
+  height: 120rpx;
+  width: 120rpx;
+
+  padding: 10rpx;
+}
+
+.social-text {
+  font-family: serif;
+
+  text-align: center;
+}
+
+.bottom-container {
+  
+}

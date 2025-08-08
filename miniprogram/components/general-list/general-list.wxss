@@ -1,0 +1,11 @@
+.list-container {
+  height: 100vh;
+  width: 750rpx;
+}
+
+.item-container {
+  height: 12vh;
+  width: 100%;
+
+  border-bottom: 1rpx solid lightgrey;
+}

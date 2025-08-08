@@ -1,0 +1,2 @@
+<!--pages/messagePage/sysmessagePage/sysmessagePage.wxml-->
+<van-empty description="暂无系统消息"/>

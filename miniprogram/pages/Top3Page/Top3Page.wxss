@@ -1,1 +1,136 @@
-/* pages/Top3Page/Top3Page.wxss */
+.page-container {
+  height: 100vh;
+  width: 750rpx;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.video-container {
+  height: 92%;
+  width: 100%;
+}
+
+.bottom-bar{
+  height: 8%;
+  width: 100%;
+  background-color: #000;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding-left: 0rpx;
+  padding-right: 0rpx;
+}
+
+.video {
+  height: 100%;
+  width: 100%;
+}
+
+.follow-container {
+  position: absolute;
+  top: 50rpx;
+  left: 375rpx;
+  transform: translateX(-50%);
+
+  width: 220rpx; /* 容器宽度 */
+  height: 80rpx; /* 容器高度 */
+  border-radius: 40rpx; /* 圆角半径，高度的一半使其成为两端半圆形 */
+  border: 4rpx solid #5f5c5c; /* 4rpx粗的绿色边框 */
+  background-color: rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.follow-avatar {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+
+.follow-text {
+  margin-left: 20rpx;
+
+  color: #ffffff;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.avatar {
+  margin-left: 20rpx;
+
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+  border: 2rpx solid #fff;
+  flex-shrink: 0;
+}
+
+.nickname {
+  margin-left: 20rpx;
+  flex-grow: 1;
+
+  color: #ffffff;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.like-button {
+  margin-right: 10rpx;
+  height: 70%;
+  width: 100rpx!important;
+}
+
+.like-icon {
+  height: 100%;
+  width: 100%;
+}
+
+.collect-button {
+  margin-right: 20rpx;
+  height: 60%;
+  width: 100rpx!important;
+
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+}
+
+.collect-icon {
+  height: 100%;
+  width: 100%;
+}
+
+.share-button {
+  margin-right: 30rpx;
+
+  height: 70%;
+  width: 200rpx !important;
+  border-radius: 50rpx;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding-left: 0rpx;
+  padding-right: 0rpx;
+}
+
+.weixin-icon {
+  width: 50rpx;
+  margin-left: 30rpx;
+}
+
+.share-font {
+  margin-left: 10rpx;
+
+  font-size: 40rpx;
+  font-family: sans-serif;
+
+}

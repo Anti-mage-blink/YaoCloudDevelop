@@ -1,0 +1,23 @@
+<view>
+<!-- 3=scroll-view 4=scroll-item-container 5=creator-container -->
+  <van-tabs active="{{activeTab}}" swipeable bind:change="changeTab">
+    <van-tab wx:for="{{categoryList}}" wx:for-item="category" title="{{category.title}}" wx:key="title">
+      <scroll-view>
+        <view wx:for="{{category.creator_unit_list}}" wx:for-item="creator" class="scroll-item-container" wx:key="user_id">
+          <view class="creator-container">
+            <image class="avatar" src="{{creator.avatar_fileid}}"/>
+            <view class="creator-text-container">
+              <text class="nickname">{{creator.nickname}}</text>
+              <text class="other-info">视频数{{creator.video_count}}·粉丝数{{creator.follower_count}}</text>
+            </view>
+          </view>
+          <scroll-view class="video-list-container" scroll-x>
+            <view wx:for="{{creator.video_fileid_list}}" wx:for-item="video_fileid" class="video-container" wx:key="*this">
+              <video src="{{video_fileid}}" class="video-unit"/>
+            </view>
+          </scroll-view>
+        </view>
+      </scroll-view>
+    </van-tab>
+  </van-tabs>
+</view>

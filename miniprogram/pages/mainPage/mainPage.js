@@ -8,33 +8,33 @@ Page({
   },
 
   onLoad(options) {
-  //   // wx.navigateTo({ url: "/pages/Top3Page/Top3Page", });
-  //   console.log("[mainPage]页面加载");
+    // wx.navigateTo({ url: "/pages/Top3Page/Top3Page", });
     app.globalData.openidPromise.then(openid => {
       this.getUnitList();
     });
   },
 
+  tapVideoToNavigate() {
+    // wx.navigateTo({
+    //   url: "/pages/concreteVideoPage/concreteVideoPage",
+    // })
+  },
+
   tapLike(event) {
-    const item = event.currentTarget.dataset.item;
-    console.log(item.is_liked);
-    console.log(item.index);
-    console.log(item);
-    console.log(this.data.unitList)
-    // 先承诺，再执行（确保正确执行）
+    const unit = event.currentTarget.dataset.unit;
+    const targetState = !unit.current_user.is_liked;
+    // 先承诺，后执行（确保正确执行）
     // 先在前端响应
     this.setData({
-      [`unitList[${item.index}].is_liked`]: !item.is_liked,
+      [`unitList[${unit.other_info.index}].current_user.is_liked`]: targetState,
     })
-    // 原来值变承诺值
-    item.flag = !item.is_liked;
     // 再去尝试修改后端，按承诺方向执行
     // 共同参数
     const common_params = {
       openid: app.globalData.openid,
-      fileid: item.video_fileid,
+      fileid: unit.video.video_fileid,
     };
-    if (item.is_liked) {
+    if (targetState) {
       app.callContainer("/api/v1/likes", "POST", common_params)
     }
     else {
@@ -43,22 +43,20 @@ Page({
   },
 
   tapCollect(event) {
-    const item = event.currentTarget.dataset.item;
-    console.log(item);
-    // 先承诺，再执行（确保正确执行）
+    const unit = event.currentTarget.dataset.unit;
+    const targetState = !unit.current_user.is_collected;
+    // 先承诺，后执行（确保正确执行）
     // 先在前端响应
     this.setData({
-      [`unitList[${item.index}].is_collected`]: !item.is_collected,
+      [`unitList[${unit.other_info.index}].current_user.is_collected`]: targetState,
     })
-    // 原来值变承诺值
-    item.is_collected = !item.is_collected;
     // 再去尝试修改后端，按承诺方向执行
     // 共同参数
     const common_params = {
       openid: app.globalData.openid,
-      fileid: item.video_fileid,
+      fileid: unit.video.video_fileid,
     };
-    if (item.is_collected) {
+    if (targetState) {
       app.callContainer("/api/v1/collects", "POST", common_params)
     }
     else {
@@ -79,16 +77,17 @@ Page({
     };
     // console.log("videoList传参:");
     // console.log(this.data.videoList);
-    app.callContainer("/api/v1/videos/random_n_with_userInfo", "GET", query_params)
+    app.callContainer("/api/v1/videos/random_n", "GET", query_params)
     .then(res => {
+      const new_video_fileid_list = res.unit_list.map(unit => unit.video.video_fileid)
       this.setData({
-        videoList: this.data.videoList.concat(res.fileid_list),
+        videoList: this.data.videoList.concat(new_video_fileid_list),
         unitList: this.data.unitList.concat(res.unit_list)
       });
       // console.log("获取视频后videoList:");
       // console.log(this.data.videoList);
-      // console.log("获取视频后unitList:");
-      // console.log(this.data.unitList);
+      console.log("获取视频后unitList:");
+      console.log(this.data.unitList);
     })
     .finally(() => {
       this.setData({ loadingMtx: false });

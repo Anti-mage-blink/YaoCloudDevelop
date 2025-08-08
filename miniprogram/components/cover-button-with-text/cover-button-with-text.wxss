@@ -1,0 +1,18 @@
+.custom-button-container {
+    height: auto!important;
+    width: var(--custom-button-container-width, 80rpx);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.icon {
+    height: var(--icon-height, 80rpx);
+    width: var(--icon-width, 80rpx);
+}
+
+.text {
+    text-align: center;
+}

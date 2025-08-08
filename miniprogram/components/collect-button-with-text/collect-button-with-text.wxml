@@ -1,0 +1,6 @@
+<button-with-text custom-style="" 
+    src="{{isCollected ? '/images/icons/收藏图标-已收藏.png' : '/images/icons/收藏图标-未收藏.png'}}"
+    text="{{collectCount}}" 
+    catch:touch="tapCollectButton">
+      
+</button-with-text>

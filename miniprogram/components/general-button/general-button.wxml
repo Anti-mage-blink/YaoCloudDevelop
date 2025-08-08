@@ -1,0 +1,4 @@
+<view class="custom-style custom-button-container" catchtap="tapButton">
+  <image class="icon" src="{{src}}" mode="aspectFit"/>
+  <slot></slot>
+</view>

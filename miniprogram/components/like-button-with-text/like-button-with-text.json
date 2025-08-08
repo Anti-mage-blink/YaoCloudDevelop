@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "button-with-text": "/components/button-with-text/button-with-text"
+  }
+}

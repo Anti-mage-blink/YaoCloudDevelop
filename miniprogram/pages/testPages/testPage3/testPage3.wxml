@@ -1,0 +1,29 @@
+<view>
+  <general-button custom-style="more-button" src="/images/icons/更多图标-我的页面.png"
+  bind:touch="tapMoreButton"/>
+  <van-action-sheet show="{{showVideoActionSheet}}"
+  actions="{{actionsOfVideoActionSheet}}"
+  bind:select="selectVideoActionSheetAction"
+  bind:close="closeVideoActionSheet"
+  bind:cancel="closeVideoActionSheet"
+  cancel-text="取消"/>
+
+  <general-button custom-style="comment-button" src="/images/icons/评论图标.png"
+  bind:touch="tapCommentButton"/>
+  <van-popup show="{{showVideoCommentPopup}}" position="bottom"
+  round closeable
+  custom-style="height: 70%;"
+  bind:close="closeVideoCommentPopup"
+  bind:click-overlay="closeVideoCommentPopup">
+    <view class="title-bar" style="height: 54px;">
+      <text>共</text>
+    </view>
+    <scroll-view class="comment-list" 
+    scroll-y>
+      <view wx:for="{{videoFirstLevelCommentList}}"></view>
+    </scroll-view>
+    <view class="bottom-bar">
+      
+    </view>
+  </van-popup>
+</view>

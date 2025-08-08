@@ -1,3 +1,15 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    
+    "follow-button": "/components/follow-button/follow-button",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "general-list": "/components/general-list/general-list",
+
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
+    
+  },
+  "navigationStyle": "default",
+  "navigationBarTitleText": "推荐用户"
 }

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "follow-button": "/components/follow-button/follow-button",
+    "button-with-text": "/components/button-with-text/button-with-text",
+    "like-button-with-text": "/components/like-button-with-text/like-button-with-text",
+    "collect-button-with-text": "/components/collect-button-with-text/collect-button-with-text",
+    "cover-button-with-text": "/components/cover-button-with-text/cover-button-with-text"
+  }
+}

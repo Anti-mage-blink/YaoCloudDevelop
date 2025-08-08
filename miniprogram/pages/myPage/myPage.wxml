@@ -1,15 +1,37 @@
 <view class="page-container">
   <view class="userInfo-container">
     <image class="avatar-image" src="{{avatar_fileid}}" mode="aspectFit" bindtap="tapUploadAvatar"/>
-    <text class="nickname-text">123</text>
+    <text class="nickname-text">{{nickname}}</text>
+    <button-with-text class="settings-button" 
+    src="/images/icons/设置图标-我的页面.png" text="设置" 
+    bind:touch="tapSettingsButton"/>
+    <button-with-text class="top-share-button" 
+    src="/images/icons/分享图标-我的页面.png" text="分享" >
+      <button class="inner-share-button" 
+      open-type="share" catchtap></button>
+    </button-with-text>
+    <van-popup show="{{ showSlideMenu }}" position="right" 
+    custom-style="width: 75%; height: 100%;" 
+    closeable bind:close="hideSlideMenu" close-on-click-overlay>
+      <view style="padding-top: 50px; background-color: #f7f8fa; height: 100%;">
+        <van-cell-group title="设置">
+          <van-cell title="修改个人信息" is-link 
+          bind:tap="tapEditProfile"/>
+          <van-cell title="我的收益" is-link 
+          bind:tap="tapMyProfit"/>
+          <van-cell title="帮助与反馈" is-link 
+          bind:tap="tapHelpAndFeedback"/>
+        </van-cell-group>
+      </view>
+    </van-popup>
+
   </view>
 
   <view class="videos-uploaded-container">
-    <van-tabs active="{{ true }}">
-      <van-tab title="作品">
-        <scroll-view class="scroll-view" scroll-y
-          lower-threshold="100rpx" bindscrolltolower="onReachBottom">
-          <block wx:for="{{unitList}}" wx:key="index">
+    <van-tabs active="{{ true }}" custom-class="van-tabs">
+      <van-tab title="作品" custom-class="van-tab">
+        <scroll-view class="scroll-view" scroll-y>
+          <view wx:for="{{unitList_works}}" wx:key="index">
             <view class="item-container">
 
               <view class="video-container">
@@ -20,18 +42,40 @@
                 <image class="avatar" src="{{item.avatar_fileid}}" mode="aspectFit"/>
                 <text class="nickname">{{item.nickname}}</text>
 
-                <button class="share-button" type="primary" open-type="share" bindtap="onShareAppMessage" >
+                <button class="share-button" type="primary" 
+                open-type="share">
+                  <image class="weixin-icon" src="cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/通用图像文件/微信图标-分享按钮用.png" mode="aspectFit"/>
+                  <text class="share-font">分享</text>
+                </button>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </van-tab>
+      
+      <van-tab title="收藏" custom-class="van-tab" bindtap="switchToCollect">
+        <scroll-view class="scroll-view" scroll-y>
+          <view wx:for="{{unitList_collects}}" wx:key="index">
+            <view class="item-container">
+
+              <view class="video-container">
+                <video class="video" src="{{item.video_fileid}}" controls/>
+              </view>
+              
+              <view class="bottom-bar">
+                <image class="avatar" src="{{item.avatar_fileid}}" mode="aspectFit"/>
+                <text class="nickname">{{item.nickname}}</text>
+
+                <button class="share-button" type="primary" 
+                open-type="share" bindtap="onShareAppMessage">
                   <image class="weixin-icon" src="cloud://cloud1-5gbsnpgt113642bc.636c-cloud1-5gbsnpgt113642bc-1368918426/通用图像文件/微信图标-分享按钮用.png" mode="aspectFit"/>
                   <text class="share-font">分享</text>
                 </button>
               </view>
 
             </view>
-          </block>
+          </view>
         </scroll-view>
-      </van-tab>
-      <van-tab title="收藏">
-
       </van-tab>
     </van-tabs>
   </view>
